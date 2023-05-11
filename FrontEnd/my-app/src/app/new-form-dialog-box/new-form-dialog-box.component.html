@@ -1,0 +1,17 @@
+<div class="">
+    <h1 mat-dialog-title>Créer une nouvelle note</h1>
+    <div mat-dialog-content class="d-flex">
+        <form [formGroup]="noteForm">
+            <mat-form-field>
+                <input matInput placeholder="Titre de la note" formControlName="title" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Description de la note" formControlName="description">
+            </mat-form-field>
+        </form>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancel()">Annuler</button>
+        <button mat-button color="primary" [disabled]="noteForm.invalid" (click)="save()">Enregistrer</button>
+    </div>
+</div>
